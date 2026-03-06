@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المهندس محمد العامري | مهندس الشبكات والسيرفرات</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Tajawal', Arial, sans-serif;
+      background: linear-gradient(135deg, #23272F 60%, #2196F3 100%);
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #2196F3 10%, #00B4D8 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .img-animate {
+      animation: float 2s infinite alternate;
+      box-shadow: 0 4px 24px #2196F355;
+    }
+    @keyframes float {
+      to { transform: translateY(-10px) scale(1.04); }
+    }
+    .profile-img {
+      border: 4px solid #00B4D8;
+      box-shadow: 0 8px 32px rgba(33, 150, 243, 0.4);
+    }
+    .card-hover:hover {
+      box-shadow: 0 8px 24px #2196F380;
+      transform: translateY(-6px) scale(1.03);
+      border-color: #2196F3;
+    }
+    .btn-main {
+      background: linear-gradient(90deg, #38B000 40%, #00B4D8 100%);
+      color: #fff;
+      font-weight: bold;
+      border-radius: 2rem;
+      padding: 0.75rem 2rem;
+      box-shadow: 0 4px 16px #00B4D844;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-main:hover {
+      background: linear-gradient(90deg, #00B4D8 10%, #7209B7 90%);
+      transform: scale(1.05);
+    }
+    .nav-link {
+      transition: color .2s;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: #38B000 !important;
+    }
+    .icon-animate {
+      animation: bounce 1.2s infinite alternate;
+    }
+    @keyframes bounce {
+      to { transform: translateY(-8px); }
+    }
+    .whatsapp-fixed {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      background: #38B000;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px #38B00044;
+      transition: background .2s, transform .2s;
+    }
+    .whatsapp-fixed:hover {
+      background: #00B4D8;
+      transform: scale(1.1);
+    }
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .contact-icon:hover {
+      transform: translateY(-5px) scale(1.1);
+    }
+    .whatsapp-icon {
+      background: #25D366;
+      color: white;
+    }
+    .telegram-icon {
+      background: #0088cc;
+      color: white;
+    }
+    .email-icon {
+      background: #D44638;
+      color: white;
+    }
+
+    /* إخفاء القائمة على الجوال */
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        background: #23272F;
+        padding: 1rem;
+        border-radius: 12px;
+        margin-top: 0.5rem;
+      }
+      .mobile-menu.active {
+        display: flex;
+      }
+      .mobile-menu a {
+        margin: 0.5rem 0;
+        text-align: center;
+      }
+      .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+      }
+      .btn-main {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- Navbar -->
+  <nav class="w-full bg-[#23272F] px-6 py-4 text-lg fixed top-0 left-0 right-0 z-50 shadow-lg">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center nav-container">
+      <div class="flex justify-between items-center w-full md:w-auto">
+        <a href="#home" class="font-bold gradient-text text-2xl">العامري تك</a>
+        <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="mobile-menu w-full md:w-auto mt-2 md:mt-0">
+        <a href="#home" class="nav-link active">الرئيسية</a>
+        <a href="#about" class="nav-link">من أنا</a>
+        <a href="#services" class="nav-link">الخدمات</a>
+        <a href="#skills" class="nav-link">مهاراتي</a>
+        <a href="#courses" class="nav-link">الدورات</a>
+        <a href="#contact" class="nav-link">تواصل</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- الصفحة الرئيسية -->
+  <section id="home" class="min-h-screen flex items-center justify-center pt-24 px-4">
+    <div class="bg-[#23272fbb] rounded-3xl shadow-2xl p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10 max-w-2xl w-full mx-4">
+      <img src="https://raw.githubusercontent.com/Simamery/my-website/main/amery.jpg"
+           alt="المهندس محمد العامري" 
+           class="img-animate profile-img w-28 h-28 md:w-40 md:h-40 rounded-full object-cover mx-auto md:mx-0">
+      
+      <div class="text-center md:text-right flex-1">
+        <h1 class="text-2xl md:text-4xl font-bold gradient-text mb-3 md:mb-4 flex items-center justify-center md:justify-end gap-2">
+          المهندس محمد العامري
+        </h1>
+        <p class="text-base md:text-xl mb-5 md:mb-8 text-[#AAAAAA] font-[Tajawal] leading-relaxed">
+          مهندس الشبكات والسيرفرات وأنظمة المراقبة
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-end">
+          <a href="#services" class="btn-main text-sm md:text-base px-4 py-2 md:px-6">خدماتنا</a>
+          <a href="#contact" class="btn-main flex items-center justify-center gap-2 text-sm md:text-base px-4 py-2 md:px-6">
+            <i class="fas fa-envelope text-lg"></i>
+            تواصل معي
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- من أنا -->
+  <section id="about" class="py-16 px-4 bg-[#222]">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12 px-4">
+      <div class="flex-shrink-0 mx-auto md:mx-0">
+        <img src="https://raw.githubusercontent.com/Simamery/my-website/main/amery.jpg"
+             alt="المهندس محمد العامري" 
+             class="img-animate profile-img w-48 h-48 md:w-56 md:h-56 rounded-full object-cover">
+      </div>
+      
+      <div class="text-center md:text-right">
+        <h2 class="text-3xl font-bold mb-3 gradient-text">من أنا</h2>
+        <p class="text-lg text-[#AAAAAA] mb-6">
+          أنا محمد العامري، مهندس شبكات معتمد بخبرة تفوق 10 سنوات في إدارة السيرفرات وصيانة شاشات رسيرفرات.
+          أقدّم حلولًا تقنية فعالة، سريعة، وآمنة للبيئات المنزلية والتجارية.
+        </p>
+        <div class="mt-6 flex justify-center">
+          <div class="flex flex-nowrap gap-6 overflow-x-auto scrollbar-hide px-2 py-3 max-w-xs sm:max-w-full">
+            <div class="flex flex-col flex-shrink-0 items-center border-2 border-[#222] rounded-xl p-4 bg-[#181818] w-32">
+              <i class="fa-solid fa-ethernet icon-animate text-2xl mb-2 text-[#00B4D8]"></i>
+              <span class="font-bold">Switches</span>
+            </div>
+            <div class="flex flex-col flex-shrink-0 items-center border-2 border-[#222] rounded-xl p-4 bg-[#181818] w-32">
+              <i class="fa-solid fa-network-wired icon-animate text-2xl mb-2 text-[#00B4D8]"></i>
+              <span class="font-bold">Networks</span>
+            </div>
+            <div class="flex flex-col flex-shrink-0 items-center border-2 border-[#222] rounded-xl p-4 bg-[#181818] w-32">
+              <i class="fa-solid fa-server icon-animate text-2xl mb-2 text-[#00B4D8]"></i>
+              <span class="font-bold">Server+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الخدمات -->
+  <section id="services" class="py-14 px-4 bg-[#1B1B1B]">
+    <h2 class="text-3xl font-bold mb-12 gradient-text text-center">الخدمات</h2>
+    <div class="flex flex-wrap justify-center gap-6">
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] w-full sm:w-80 p-8 flex flex-col items-center text-center transition">
+        <i class="fa-solid fa-wifi icon-animate text-4xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-xl mb-2">الشبكات الذكية</h3>
+        <p class="text-[#AAAAAA]">إعداد الشبكات السلكية واللاسلكية للمنازل والمكاتب.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] w-full sm:w-80 p-8 flex flex-col items-center text-center transition">
+        <i class="fa-solid fa-server icon-animate text-4xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-xl mb-2">السيرفرات والتحكم</h3>
+        <p class="text-[#AAAAAA]">تركيب وإدارة السيرفرات وأنظمة الحماية.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] w-full sm:w-80 p-8 flex flex-col items-center text-center transition">
+        <i class="fa-solid fa-video icon-animate text-4xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-xl mb-2">أنظمة المراقبة</h3>
+        <p class="text-[#AAAAAA]">تركيب أنظمة مراقبة وتحكم ذكية.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- المهارات -->
+  <section id="skills" class="py-14 px-4 bg-[#1B1B1B]">
+    <h2 class="text-3xl font-bold mb-12 gradient-text text-center">مهاراتي</h2>
+    <div class="flex flex-wrap justify-center gap-6">
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] w-full sm:w-64 p-6 flex flex-col items-center text-center transition">
+        <i class="fa-solid fa-server icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">إدارة السيرفرات</h3>
+        <p class="text-[#AAAAAA] text-sm">خبرة في تركيب وإدارة السيرفرات بأنواعها.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] w-full sm:w-64 p-6 flex flex-col items-center text-center transition">
+        <i class="fa-solid fa-network-wired icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">إدارة الشبكات</h3>
+        <p class="text-[#AAAAAA] text-sm">تصميم وتشغيل الشبكات السلكية واللاسلكية.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] w-full sm:w-64 p-6 flex flex-col items-center text-center transition">
+        <i class="fa-solid fa-laptop icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">صيانة الحواسيب</h3>
+        <p class="text-[#AAAAAA] text-sm">تشخيص وصيانة الأعطال المادية والبرمجية.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] w-full sm:w-64 p-6 flex flex-col items-center text-center transition">
+        <i class="fa-solid fa-plug icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">الأعمال الكهربائية</h3>
+        <p class="text-[#AAAAAA] text-sm">توصيلات كهربائية آمنة وتنظيم الكابلات.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] w-full sm:w-64 p-6 flex flex-col items-center text-center transition">
+        <i class="fa-solid fa-download icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">تحميل الأنظمة</h3>
+        <p class="text-[#AAAAAA] text-sm">تركيب ويندوز، لينكس، وبرامج التشغيل.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] w-full sm:w-64 p-6 flex flex-col items-center text-center transition">
+        <i class="fa-solid fa-ethernet icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">برمجة السويتشات</h3>
+        <p class="text-[#AAAAAA] text-sm">تكوين سويتشات ميكروتيك، سيسكو، وغيرها.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- الدورات التدريبية والشهادات -->
+  <section id="courses" class="py-14 px-4 bg-[#1B1B1B]">
+    <h2 class="text-3xl font-bold mb-10 gradient-text text-center">الدورات التدريبية والشهادات</h2>
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-shield-alt icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">FCF-Getting Started in Cybersecurity 3.0</h3>
+        <p class="text-sm text-[#AAAAAA]">مقدمة شاملة في الأمن السيبراني من FCF.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-shield-alt icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">Introduction to Cybersecurity</h3>
+        <p class="text-sm text-[#AAAAAA]">مقدمة في أمن المعلومات والحماية السيبرانية.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-server icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">The Infrastructure of Network and Servers</h3>
+        <p class="text-sm text-[#AAAAAA]">البنية التحتية للشبكات والسيرفرات.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-wifi icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">Hacking Wireless Network</h3>
+        <p class="text-sm text-[#AAAAAA]">اختبار اختراق الشبكات اللاسلكية.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-computer icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">Windows, Word, Excel</h3>
+        <p class="text-sm text-[#AAAAAA]">الدورات الأساسية في استخدام الحاسوب وتطبيقات الأوفيس.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-microchip icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">Computer Hardware</h3>
+        <p class="text-sm text-[#AAAAAA]">صيانة وتركيب أجهزة الحاسوب وتشخيص الأعطال.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-keyboard icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">Fast Typing on Keyboard</h3>
+        <p class="text-sm text-[#AAAAAA]">إتقان الكتابة السريعة على لوحة المفاتيح.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-network-wired icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">Computer Network</h3>
+        <p class="text-sm text-[#AAAAAA]">أساسيات وتشغيل الشبكات الحاسوبية.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-sitemap icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">Network Basics</h3>
+        <p class="text-sm text-[#AAAAAA]">أساسيات الشبكات وبروتوكولات الاتصال.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-server icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">Windows Server</h3>
+        <p class="text-sm text-[#AAAAAA]">إدارة وتكوين خوادم ويندوز.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-database icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">Microsoft SQL Server</h3>
+        <p class="text-sm text-[#AAAAAA]">قواعد بيانات Microsoft SQL Server.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-lock icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">Sophos XG</h3>
+        <p class="text-sm text-[#AAAAAA]">تكوين وحماية الشبكات باستخدام جدران الحماية Sophos.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-certificate icon-animate text-3xl mb-3 text-[#38B000]"></i>
+        <h3 class="font-bold text-lg mb-2">ITIL 4 Foundation</h3>
+        <p class="text-sm text-[#AAAAAA]">أساسيات إدارة خدمات تكنولوجيا المعلومات.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-certificate icon-animate text-3xl mb-3 text-[#38B000]"></i>
+        <h3 class="font-bold text-lg mb-2">MCSA CORE</h3>
+        <p class="text-sm text-[#AAAAAA]">شهادة Microsoft في إدارة أنظمة Windows Server.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-certificate icon-animate text-3xl mb-3 text-[#38B000]"></i>
+        <h3 class="font-bold text-lg mb-2">MCSA</h3>
+        <p class="text-sm text-[#AAAAAA]">شهادة Microsoft Certified Solutions Associate.</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-microchip icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">PLC1</h3>
+        <p class="text-sm text-[#AAAAAA]">برمجة وحدات التحكم المنطقية (المرحلة الأولى).</p>
+      </div>
+      <div class="card-hover border-2 border-[#222] rounded-xl bg-[#222] p-6 transition text-center">
+        <i class="fa-solid fa-microchip icon-animate text-3xl mb-3 text-[#00B4D8]"></i>
+        <h3 class="font-bold text-lg mb-2">PLC2</h3>
+        <p class="text-sm text-[#AAAAAA]">برمجة وحدات التحكم المنطقية (المرحلة المتقدمة).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- نموذج التواصل -->
+  <section id="contact" class="py-16 px-4 bg-[#222]">
+    <h2 class="text-3xl font-bold gradient-text text-center mb-8">تواصل معنا</h2>
+    <div class="max-w-lg mx-auto bg-[#181818] rounded-xl shadow-xl p-8 flex flex-col gap-8 items-center">
+      <div class="flex flex-wrap justify-center gap-6 w-full">
+        <a href="https://wa.me/+967770370179" target="_blank" class="contact-icon whatsapp-icon" title="واتساب">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://t.me/@MidoAmeri" target="_blank" class="contact-icon telegram-icon" title="تلجرام">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="mailto:eng.alameri55@gmail.com" class="contact-icon email-icon" title="بريد إلكتروني">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <div class="text-center text-[#AAAAAA]">
+        <p class="mb-2">يمكنك التواصل معنا مباشرة عبر أي من المنصات أعلاه</p>
+        <p>سنجيب على استفساراتك في أسرع وقت ممكن</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#181818] py-6 text-center text-[#AAAAAA] mt-10">
+    <div class="mb-2">
+      <a href="#home" class="mx-2 underline">الرئيسية</a>
+      <a href="#about" class="mx-2 underline">من أنا</a>
+      <a href="#services" class="mx-2 underline">الخدمات</a>
+      <a href="#skills" class="mx-2 underline">مهاراتي</a>
+      <a href="#courses" class="mx-2 underline">الدورات</a>
+      <a href="#contact" class="mx-2 underline">تواصل</a>
+    </div>
+    <div class="mb-2">
+      <span>📞 +967770370179</span> | 
+      <span>✉️ eng.alameri55@gmail.com</span>
+    </div>
+    <div>
+      جميع الحقوق محفوظة © نسيم العامري <span id="currentYear"></span>
+    </div>
+  </footer>
+  
+  <!-- زر واتساب ثابت -->
+  <a href="https://wa.me/+967770370179" class="whatsapp-fixed" title="تواصل عبر واتساب" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <script>
+    // قائمة الهامبرغر
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+
+    // تنقل ناعم عند النقر على الروابط
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        if (this.hash) {
+          e.preventDefault();
+          
+          document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+          });
+          this.classList.add('active');
+          
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+          
+          // إغلاق القائمة على الجوال
+          mobileMenu.classList.remove('active');
+        }
+      });
+    });
+    
+    // تحديث الروابط النشطة عند التمرير
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+    
+    // تحديث سنة حقوق النشر
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
